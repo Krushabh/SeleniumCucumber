@@ -1,11 +1,14 @@
 package pages;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
-import utility.BrowserDriver;
 
 import static org.junit.Assert.assertEquals;
+import static utility.DriverFactory.getDriver;
 
-public class LoggedInPage extends BrowserDriver {
+public class LoggedInPage {
+    private static final Logger logger = LogManager.getLogger(LoggedInPage.class);
 
     public static String productcateogry_formalshoes = "//*[text()='Formal Shoes']";
 
@@ -14,17 +17,20 @@ public class LoggedInPage extends BrowserDriver {
     public static String productcateogry_sneakers = "//*[text()='Sneakers']";
 
     public static void visibility_productcategory_formalshoes() throws InterruptedException {
-        String actualproductcategory_fs = driver.findElement(By.xpath(productcateogry_formalshoes)).getText();
+        logger.info("Navigating to Products Page  and check Formal Shoes");
+        String actualproductcategory_fs = getDriver().findElement(By.xpath(productcateogry_formalshoes)).getText();
         assertEquals("Formal Shoes",actualproductcategory_fs);
     }
 
     public static void visibility_productcategory_sportsshoes() throws InterruptedException {
-        String actualproductcategory_ss = driver.findElement(By.xpath(productcateogry_sportsshoes)).getText();
+        logger.info("Navigating to Products Page  and check Sports Shoes");
+        String actualproductcategory_ss = getDriver().findElement(By.xpath(productcateogry_sportsshoes)).getText();
         assertEquals("Sports",actualproductcategory_ss);
     }
 
     public static void visibility_productcategory_sneakershoes() throws InterruptedException {
-        String actualproductcategory_s = driver.findElement(By.xpath(productcateogry_sneakers)).getText();
+        logger.info("Navigating to Products Page  and check Sneaker Shoes");
+        String actualproductcategory_s = getDriver().findElement(By.xpath(productcateogry_sneakers)).getText();
         assertEquals("Sneakers",actualproductcategory_s);
     }
 }
