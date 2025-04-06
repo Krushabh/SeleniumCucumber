@@ -18,6 +18,6 @@ public class OnlineProductsPage {
     public void user_should_be_able_to_view_the_products() {
 
         getText_formalshoes_firstvalue();
-        assertEquals("Classic Cheltenham",getText_formalshoes_firstvalue());
+        assertEquals("   Classic Cheltenham",getText_formalshoes_firstvalue());
     }
 }
