@@ -1,11 +1,11 @@
 package pages;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
-import org.openqa.selenium.chrome.ChromeDriver;
-import utility.BrowserDriver;
-
-public class LoginPage extends BrowserDriver {
+import static utility.DriverFactory.getDriver;
+public class LoginPage  {
+    private static final Logger logger = LogManager.getLogger(LoginPage.class);
 
     public static String username_text_id = "usr";
     public static String password_text_id = "pwd";
@@ -14,23 +14,28 @@ public class LoginPage extends BrowserDriver {
 
 
     public static void sendkeys_username() throws InterruptedException {
-        driver.findElement(By.id(username_text_id)).sendKeys("Scott.gale@gmail.com");
+
+        logger.info("Navigating to Login Page and Enter Username");
+        getDriver().findElement(By.id(username_text_id)).sendKeys("Scott.gale@gmail.com");
     }
 
     public static void sendkeys_password() throws InterruptedException {
-        driver.findElement(By.id(password_text_id)).sendKeys("P@sword!");
+        logger.info("Navigating to Login Page and Enter Password");
+        getDriver().findElement(By.id(password_text_id)).sendKeys("P@sword!");
     }
 
     public static void click_login_btn()
     {
+        logger.info("Navigating to Login Page and click Login Button");
 
-        driver.findElement(By.xpath(login_btn_xpath)).click();
+        getDriver().findElement(By.xpath(login_btn_xpath)).click();
     }
 
     public static void click_NewRegister_btn()
     {
+        logger.info("Navigating to Login Page and Click Register Button");
 
-        driver.findElement(By.id(newregister_btn_id)).click();
+        getDriver().findElement(By.id(newregister_btn_id)).click();
     }
 
 

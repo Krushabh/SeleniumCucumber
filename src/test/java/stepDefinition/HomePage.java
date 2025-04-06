@@ -5,6 +5,7 @@ import io.qameta.allure.Allure;
 
 
 import static pages.HomePage.*;
+import static utility.DriverFactory.getDriver;
 
 
 public class HomePage {
@@ -21,7 +22,7 @@ public class HomePage {
 
     public void user_navigates_to_the_login_page() throws InterruptedException {
         Allure.feature("Given");
-        Allure.addAttachment("HTML Snapshot","text/html", driver.getPageSource(), "html");
+        Allure.addAttachment("HTML Snapshot","text/html", getDriver().getPageSource(), "html");
         clickHamburgerMenu();
         clickSignIn();
     }

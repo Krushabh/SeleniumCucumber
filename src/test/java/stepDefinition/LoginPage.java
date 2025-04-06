@@ -1,13 +1,12 @@
 package stepDefinition;
 
 
-import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import utility.BrowserDriver;
+
 import static pages.LoginPage.*;
 
 
-public class LoginPage extends BrowserDriver {
+public class LoginPage  {
 
     @When("User successfully enters the log in details")
     public void user_successfully_enters_the_log_in_details() throws InterruptedException {
