@@ -8,7 +8,7 @@ import static utility.DriverFactory.getDriver;
 public class HomePage {
     public static String hamburger_menu="//input[@type='checkbox']";
     public static String SignIn="//li[normalize-space()='Sign In Portal']";
-    public static String onlineProductsPage_link_LinkText = "Online Products";
+    public static String onlineProductsPage_xpath = "//li[normalize-space()='Online Products']";
     private static final Logger logger = LogManager.getLogger(HomePage.class);
 
     public static  void clickHamburgerMenu(){
@@ -26,7 +26,7 @@ public class HomePage {
     public static void click_OnlineProducts_link() throws InterruptedException {
         logger.info("Clicking Online Products Page...");
         Thread.sleep(2000);
-        getDriver().findElement(By.linkText(onlineProductsPage_link_LinkText)).click();
+        getDriver().findElement(By.xpath(onlineProductsPage_xpath)).click();
     }
 
 }

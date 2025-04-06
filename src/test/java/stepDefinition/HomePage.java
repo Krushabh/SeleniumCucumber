@@ -11,9 +11,10 @@ import static utility.DriverFactory.getDriver;
 public class HomePage {
 
     @Given("User navigates to the Online products page")
-    public void user_navigates_to_the_online_products_page() {
+    public void user_navigates_to_the_online_products_page() throws InterruptedException {
         Allure.getLifecycle().getCurrentTestCase();
         clickHamburgerMenu();
+        click_OnlineProducts_link();
     }
 
 
